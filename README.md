@@ -18,7 +18,7 @@ Code source -> CI -> contrôles de sécurité -> image -> registre
 | Bloc | État | Pourquoi |
 |---|---|---|
 | Structure du dépôt | Prête | Base indépendante du workload |
-| CI/CD | Phase 1 renforcée | Structure, secrets, lint YAML et audit des workflows |
+| CI/CD | Durcissement pré-workload | Actions immuables, schémas et audits IaC séparés |
 | Build et tests | En attente | Nécessitent le choix d'une application |
 | Image et Trivy | En attente | Nécessitent une image à construire |
 | Kubernetes | Fondation prête | Namespace, quotas, limites et réseau sans workload |
@@ -55,6 +55,9 @@ dans
 La fondation Kubernetes/Terraform indépendante de l'application est expliquée
 dans
 [`docs/phase-1-5-platform-foundation.md`](docs/phase-1-5-platform-foundation.md).
+
+Le durcissement indépendant du workload est expliqué dans
+[`docs/phase-1-6-pre-workload-hardening.md`](docs/phase-1-6-pre-workload-hardening.md).
 
 ## Premier contrôle
 

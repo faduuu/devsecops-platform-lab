@@ -8,8 +8,8 @@ des problèmes sans aider à comprendre la première pipeline.
 | Outil | Rôle | État détecté |
 |---|---|---|
 | Git | Historique, commits et envoi vers GitHub | Installé |
-| Compte GitHub | Hébergement du dépôt et exécution de GitHub Actions | À confirmer |
-| Éditeur (VS Code conseillé) | Lire et modifier YAML, Markdown et scripts | Non détecté dans le PATH |
+| Compte GitHub | Hébergement du dépôt et exécution de GitHub Actions | Confirmé |
+| Éditeur IntelliJ IDEA | Lire et modifier YAML, Markdown et scripts | Installé |
 | Navigateur | Consulter GitHub et les rapports CI | Disponible sur Windows |
 | PowerShell | Exécuter les validations locales | Disponible |
 
@@ -31,6 +31,10 @@ installer Maven séparément.
 - un cluster local, par exemple celui fourni/configuré avec Docker Desktop ou
   un outil dédié ;
 - Helm seulement lorsque nous aurons besoin de packages réutilisables.
+
+État actuel : Docker, `kubectl`, `kind` et `minikube` ne sont pas disponibles
+dans le terminal. La configuration et le script du cluster sont prêts, mais le
+cluster local n'a pas encore été créé.
 
 ## Phase 4 — cloud
 
@@ -61,4 +65,3 @@ git config --global user.email
 ```
 
 Ne jamais placer un mot de passe ou un token GitHub dans un fichier du dépôt.
-

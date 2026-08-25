@@ -19,6 +19,7 @@ $requiredPaths = @(
     'platform/kubernetes/base/limit-range.yaml',
     'platform/kubernetes/base/network-policy.yaml',
     'platform/kubernetes/base/kustomization.yaml',
+    'platform/kubernetes/kind/cluster.yaml',
     'infra/terraform/README.md',
     'infra/terraform/versions.tf',
     'infra/terraform/variables.tf',
@@ -33,6 +34,8 @@ $requiredPaths = @(
     'docs/phase-1-repository-governance.md',
     'docs/phase-1-configuration-security.md',
     'docs/phase-1-5-platform-foundation.md',
+    'docs/phase-1-6-pre-workload-hardening.md',
+    'scripts/Initialize-LocalKubernetes.ps1',
     'SECURITY.md'
 )
 

@@ -14,3 +14,8 @@ application :
 Aucun `Deployment` ni `Service` n'est encore défini, car le workload reste à
 choisir. La politique réseau bloque aussi le DNS par défaut : une règle de sortie
 DNS et les flux strictement nécessaires seront ajoutés avec l'application.
+
+Le dossier `kind/` contient la définition du futur cluster local. Lorsque
+Docker, `kind` et `kubectl` seront installés, le script
+`scripts/Initialize-LocalKubernetes.ps1` créera le cluster et appliquera cette
+base de façon reproductible.
