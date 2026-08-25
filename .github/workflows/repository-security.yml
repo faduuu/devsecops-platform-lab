@@ -78,6 +78,45 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
 
+  terraform-validation:
+    name: Validate Terraform configuration
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TF_IN_AUTOMATION: "true"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v4
+        with:
+          terraform_version: "1.15.8"
+
+      - name: Check Terraform formatting
+        run: terraform fmt -check -diff -recursive infra/terraform
+
+      - name: Initialize Terraform without a backend
+        run: terraform -chdir=infra/terraform init -backend=false -input=false
+
+      - name: Validate Terraform configuration
+        shell: bash
+        run: |
+          mkdir -p reports
+          set -o pipefail
+          terraform -chdir=infra/terraform validate -json |
+            tee reports/terraform-validate.json
+
+      - name: Preserve Terraform validation report
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: terraform-validation-report
+          path: reports/terraform-validate.json
+          if-no-files-found: warn
+          retention-days: 30
+
   configuration-security:
     name: Audit configuration security
     runs-on: ubuntu-latest
@@ -97,15 +136,15 @@ jobs:
       - name: Install Checkov
         run: pip install --constraint ci/security-tools-constraints.txt checkov
 
-      - name: Audit GitHub Actions configuration
+      - name: Audit declarative configurations
         run: |
           mkdir -p reports
           checkov \
             --directory . \
-            --framework github_actions \
+            --framework github_actions terraform kubernetes \
             --output cli \
             --output junitxml \
-            --output-file-path console,reports/checkov-github-actions.xml \
+            --output-file-path console,reports/checkov-configuration.xml \
             --skip-download \
             --soft-fail
 
@@ -113,7 +152,7 @@ jobs:
         if: ${{ always() }}
         uses: actions/upload-artifact@v7
         with:
-          name: checkov-github-actions-report
-          path: reports/checkov-github-actions.xml
+          name: checkov-configuration-report
+          path: reports/checkov-configuration.xml
           if-no-files-found: error
           retention-days: 30
