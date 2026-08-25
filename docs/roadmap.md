@@ -17,6 +17,16 @@
 - [ ] passage progressif de Checkov du mode informatif au mode bloquant ;
 - [ ] verrouillage des actions tierces par SHA immuable.
 
+## Phase 1.5 — Fondation déclarative sans workload
+
+- [x] namespace Kubernetes isolé et Pod Security `restricted` ;
+- [x] quotas, limites et politique réseau fermée par défaut ;
+- [x] contrat Terraform minimal sans provider ni ressource cloud ;
+- [x] validation Terraform dans la CI ;
+- [x] audit Checkov étendu à Kubernetes et Terraform ;
+- [ ] validation des manifests avec un schéma Kubernetes ;
+- [ ] passage de la baseline Checkov au mode bloquant.
+
 ## Phase 2 — Contrat du workload
 
 - choix d'une application minimale ou existante ;

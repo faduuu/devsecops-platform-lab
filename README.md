@@ -21,8 +21,8 @@ Code source -> CI -> contrôles de sécurité -> image -> registre
 | CI/CD | Phase 1 renforcée | Structure, secrets, lint YAML et audit des workflows |
 | Build et tests | En attente | Nécessitent le choix d'une application |
 | Image et Trivy | En attente | Nécessitent une image à construire |
-| Kubernetes | À concevoir | Des modèles génériques peuvent être préparés |
-| Terraform/AWS | Plus tard | Après validation locale pour éviter coûts et complexité |
+| Kubernetes | Fondation prête | Namespace, quotas, limites et réseau sans workload |
+| Terraform/AWS | Validation locale prête | Contrat vérifié sans cloud, plan ni apply |
 | Observabilité | À concevoir | Sera connectée au workload déployé |
 
 ## Organisation
@@ -51,6 +51,10 @@ GitHub Actions sont détaillées dans
 La qualité YAML, l'audit Checkov et la conservation des preuves sont expliqués
 dans
 [`docs/phase-1-configuration-security.md`](docs/phase-1-configuration-security.md).
+
+La fondation Kubernetes/Terraform indépendante de l'application est expliquée
+dans
+[`docs/phase-1-5-platform-foundation.md`](docs/phase-1-5-platform-foundation.md).
 
 ## Premier contrôle
 

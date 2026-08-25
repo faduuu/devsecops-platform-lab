@@ -14,7 +14,16 @@ $requiredPaths = @(
     'ci/security-tools-constraints.txt',
     'security/README.md',
     'platform/kubernetes/README.md',
+    'platform/kubernetes/base/namespace.yaml',
+    'platform/kubernetes/base/resource-quota.yaml',
+    'platform/kubernetes/base/limit-range.yaml',
+    'platform/kubernetes/base/network-policy.yaml',
+    'platform/kubernetes/base/kustomization.yaml',
     'infra/terraform/README.md',
+    'infra/terraform/versions.tf',
+    'infra/terraform/variables.tf',
+    'infra/terraform/locals.tf',
+    'infra/terraform/outputs.tf',
     'observability/README.md',
     'docs/architecture.md',
     'docs/roadmap.md',
@@ -23,6 +32,7 @@ $requiredPaths = @(
     'docs/phase-1-repository-security.md',
     'docs/phase-1-repository-governance.md',
     'docs/phase-1-configuration-security.md',
+    'docs/phase-1-5-platform-foundation.md',
     'SECURITY.md'
 )
 
