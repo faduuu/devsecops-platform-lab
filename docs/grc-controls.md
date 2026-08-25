@@ -15,5 +15,7 @@
 | Communications réseau non autorisées | Politique réseau fermée par défaut | Manifest versionné et revue de la PR |
 | IaC invalide ou non formatée | Terraform fmt et validate bloquants | Statut CI et rapport JSON conservé 30 jours |
 | Ressource cloud créée sans contrôle | Absence d'apply automatique à ce stade | Workflow auditable et revue de la PR |
+| Action CI remplacée ou altérée | Références GitHub Actions verrouillées par SHA | Workflow versionné et revue Dependabot |
+| Champ Kubernetes inconnu ou obsolète | Validation stricte Kubeconform | Statut CI et rapport JSON conservé 30 jours |
 
 Cette table est une base de travail, pas une certification de conformité.

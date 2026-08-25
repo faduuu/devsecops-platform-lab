@@ -18,17 +18,13 @@ bloquant.
 ## Pourquoi utiliser Checkov ?
 
 Checkov applique des règles de sécurité à des configurations déclaratives. Dans
-cette étape, il analyse les workflows GitHub Actions. La même famille d'outil
-pourra ensuite contrôler Terraform, Kubernetes et Helm lorsqu'ils seront ajoutés.
+cette étape, il analyse séparément les workflows GitHub Actions, Terraform et
+Kubernetes afin que chaque framework produise une preuve identifiable.
 
-Le job `Audit configuration security` fonctionne d'abord avec `--soft-fail` :
-il enregistre les constats sans bloquer la Pull Request. Cette phase
-d'observation permet d'établir une référence, de traiter les écarts puis de
-passer progressivement à un mode bloquant documenté.
-
-`--soft-fail` ne signifie donc pas que les alertes sont ignorées. Elles doivent
-être relues et suivies ; seul le code retour du premier audit n'empêche pas la
-fusion.
+Le job `Audit configuration security` est désormais bloquant. Le mode
+`--soft-fail` a été retiré après établissement d'une baseline séparée pour les
+trois frameworks. Une violation non traitée provoque donc l'échec du job et
+empêche la fusion dans `main`.
 
 ## Dépendances reproductibles
 
@@ -41,8 +37,9 @@ installent ainsi les mêmes versions, sauf indisponibilité externe du paquet.
 Chaque job conserve son résultat comme artefact GitHub Actions pendant 30 jours :
 
 - `yamllint-report` contient la sortie du contrôle YAML ;
-- `checkov-github-actions-report` contient un rapport JUnit XML exploitable par
-  une machine ou un outil de reporting.
+- `checkov-configuration-report` regroupe trois rapports JUnit XML, un par
+  framework ;
+- `kubeconform-report` contient la validation JSON des schémas Kubernetes.
 
 La console facilite le diagnostic immédiat. L'artefact fournit une preuve
 téléchargeable et rattachée à une exécution, un commit et une Pull Request.
@@ -62,8 +59,4 @@ elles seules, une certification de conformité.
 ## Limites assumées
 
 - aucun code applicatif n'est analysé ;
-- aucun manifeste Kubernetes ni code Terraform n'est encore présent ;
-- Checkov est temporairement informatif et devra devenir bloquant après
-  traitement de la référence initiale ;
-- les actions GitHub sont encore référencées par tags majeurs ; leur verrouillage
-  par SHA sera traité dans le durcissement de la supply chain.
+- aucun code applicatif, conteneur ou service en fonctionnement n'est analysé.
