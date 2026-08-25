@@ -1,0 +1,9 @@
+# Default owner for every repository change.
+* @faduuu
+
+# Security-sensitive areas receive an explicit ownership rule.
+/.github/workflows/ @faduuu
+/infra/ @faduuu
+/platform/ @faduuu
+/security/ @faduuu
+

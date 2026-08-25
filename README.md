@@ -44,6 +44,10 @@ Les logiciels nécessaires et leur ordre d'installation sont détaillés dans
 La première pipeline et son fonctionnement sont expliqués dans
 [`docs/phase-1-repository-security.md`](docs/phase-1-repository-security.md).
 
+La gouvernance des changements, les responsabilités et la maintenance des
+GitHub Actions sont détaillées dans
+[`docs/phase-1-repository-governance.md`](docs/phase-1-repository-governance.md).
+
 ## Premier contrôle
 
 Depuis PowerShell :

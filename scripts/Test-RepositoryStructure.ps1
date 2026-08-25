@@ -5,6 +5,9 @@ $requiredPaths = @(
     'README.md',
     '.gitignore',
     '.github/workflows/repository-security.yml',
+    '.github/CODEOWNERS',
+    '.github/PULL_REQUEST_TEMPLATE.md',
+    '.github/dependabot.yml',
     'app/README.md',
     'ci/README.md',
     'security/README.md',
@@ -15,7 +18,9 @@ $requiredPaths = @(
     'docs/roadmap.md',
     'docs/grc-controls.md',
     'docs/prerequisites.md',
-    'docs/phase-1-repository-security.md'
+    'docs/phase-1-repository-security.md',
+    'docs/phase-1-repository-governance.md',
+    'SECURITY.md'
 )
 
 $missingPaths = foreach ($relativePath in $requiredPaths) {
