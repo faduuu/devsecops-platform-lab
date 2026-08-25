@@ -9,10 +9,13 @@
 
 ## Phase 1 — Sécurité du dépôt
 
-- première GitHub Action ;
-- Gitleaks ;
-- lint des fichiers de configuration ;
-- conservation des rapports et règles de blocage.
+- [x] première GitHub Action ;
+- [x] Gitleaks ;
+- [x] gouvernance par Pull Request et protection de `main` ;
+- [x] lint des fichiers de configuration ;
+- [x] conservation initiale des rapports ;
+- [ ] passage progressif de Checkov du mode informatif au mode bloquant ;
+- [ ] verrouillage des actions tierces par SHA immuable.
 
 ## Phase 2 — Contrat du workload
 
@@ -43,4 +46,3 @@
 - Terraform ;
 - AWS ECR/EKS et IAM ;
 - contrôle des coûts, journalisation et durcissement.
-

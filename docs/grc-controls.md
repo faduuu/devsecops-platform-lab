@@ -9,6 +9,7 @@
 | Conteneur trop privilégié | Security context et politiques | Manifest validé et résultat de policy check |
 | Service indisponible | Probes, métriques et alertes | Historique d'alertes et tableau de bord |
 | Changement non traçable | Git, CI et artefacts immuables | Commit lié au build et digest de l'image |
+| Configuration invalide ou ambiguë | Lint YAML bloquant | Statut CI et rapport conservé 30 jours |
+| Configuration CI non conforme | Analyse Checkov progressive | Rapport JUnit lié au commit et au run |
 
 Cette table est une base de travail, pas une certification de conformité.
-
