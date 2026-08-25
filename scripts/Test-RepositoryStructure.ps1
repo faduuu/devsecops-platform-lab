@@ -8,8 +8,10 @@ $requiredPaths = @(
     '.github/CODEOWNERS',
     '.github/PULL_REQUEST_TEMPLATE.md',
     '.github/dependabot.yml',
+    '.yamllint.yml',
     'app/README.md',
     'ci/README.md',
+    'ci/security-tools-constraints.txt',
     'security/README.md',
     'platform/kubernetes/README.md',
     'infra/terraform/README.md',
@@ -20,6 +22,7 @@ $requiredPaths = @(
     'docs/prerequisites.md',
     'docs/phase-1-repository-security.md',
     'docs/phase-1-repository-governance.md',
+    'docs/phase-1-configuration-security.md',
     'SECURITY.md'
 )
 

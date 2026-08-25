@@ -18,7 +18,7 @@ Code source -> CI -> contrôles de sécurité -> image -> registre
 | Bloc | État | Pourquoi |
 |---|---|---|
 | Structure du dépôt | Prête | Base indépendante du workload |
-| CI/CD | Phase 1 prête | Structure et détection de secrets avec GitHub Actions |
+| CI/CD | Phase 1 renforcée | Structure, secrets, lint YAML et audit des workflows |
 | Build et tests | En attente | Nécessitent le choix d'une application |
 | Image et Trivy | En attente | Nécessitent une image à construire |
 | Kubernetes | À concevoir | Des modèles génériques peuvent être préparés |
@@ -47,6 +47,10 @@ La première pipeline et son fonctionnement sont expliqués dans
 La gouvernance des changements, les responsabilités et la maintenance des
 GitHub Actions sont détaillées dans
 [`docs/phase-1-repository-governance.md`](docs/phase-1-repository-governance.md).
+
+La qualité YAML, l'audit Checkov et la conservation des preuves sont expliqués
+dans
+[`docs/phase-1-configuration-security.md`](docs/phase-1-configuration-security.md).
 
 ## Premier contrôle
 
