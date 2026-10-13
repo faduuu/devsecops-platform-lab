@@ -71,7 +71,7 @@ jobs:
 
       - name: Preserve YAML validation report
         if: ${{ always() }}
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7
         with:
           name: yamllint-report
           path: reports/yamllint.txt
@@ -110,7 +110,7 @@ jobs:
 
       - name: Preserve Terraform validation report
         if: ${{ always() }}
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7
         with:
           name: terraform-validation-report
           path: reports/terraform-validate.json
@@ -160,7 +160,7 @@ jobs:
 
       - name: Preserve Kubernetes schema report
         if: ${{ always() }}
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7
         with:
           name: kubeconform-report
           path: reports/kubeconform.json
@@ -219,7 +219,7 @@ jobs:
 
       - name: Preserve Checkov report
         if: ${{ always() }}
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7
         with:
           name: checkov-configuration-report
           path: reports/checkov-*.xml
